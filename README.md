@@ -1,5 +1,5 @@
 [README.md](https://github.com/user-attachments/files/30162701/README.md)
-# My_PORTF# Ahammad Shuvo — Portfolio
+# My_PORTF # Ahammad Shuvo — Portfolio
 
 A bilingual (Bangla/English) personal portfolio, blog, and CMS built with Next.js 14, Tailwind CSS, and Supabase.
 
