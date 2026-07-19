@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SolaimanLipi — self-hosted. Place the font file at /public/fonts/SolaimanLipi.woff2
+   (and/or .woff / .ttf as fallback formats). Not bundled here since it's a
+   separately-licensed font file, not something fetchable from a package registry. */
+@font-face {
+  font-family: 'SolaimanLipi';
+  src:
+    url('/fonts/SolaimanLipi.woff2') format('woff2'),
+    url('/fonts/SolaimanLipi.woff') format('woff'),
+    url('/fonts/SolaimanLipi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-gray-50 text-gray-900 antialiased;
+    font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+  }
+  /* Bangla content switches to SolaimanLipi, with a system fallback stack
+     that renders reasonably even before the font file is added. */
+  html[data-lang='bn'] body {
+    font-family: 'SolaimanLipi', 'Noto Sans Bengali', 'Kalpurush', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-highlight text-white px-6 py-2.5 rounded-lg font-medium hover:bg-red-600 transition-colors;
+  }
+  .btn-secondary {
+    @apply bg-white text-primary border-2 border-primary px-6 py-2.5 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors;
+  }
+  .card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 p-6 hover:shadow-md transition-shadow;
+  }
+  .section-title {
+    @apply text-3xl font-bold text-primary mb-8;
+  }
+}
