@@ -3,7 +3,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { BookOpen } from 'lucide-react'
 import type { Book } from '@/types'
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'Books',
+  description: 'Published books and literary works by Ahammad Shuvo.',
+  openGraph: {
+    title: 'Books | Ahammad Shuvo',
+    description: 'Published books and literary works.',
+  },
+}
 export default async function BooksPage() {
   const supabase = createClient()
   const { data: books } = await supabase
