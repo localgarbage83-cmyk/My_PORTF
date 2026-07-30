@@ -3,7 +3,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Calendar, ArrowRight } from 'lucide-react'
 import type { BlogPost } from '@/types'
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'Blog',
+  description: 'Daily thoughts, essays, and stories by Ahammad Shuvo.',
+  openGraph: {
+    title: 'Blog | Ahammad Shuvo',
+    description: 'Daily thoughts, essays, and stories.',
+  },
+}
 export default async function BlogPage() {
   const supabase = createClient()
   const { data: posts } = await supabase
