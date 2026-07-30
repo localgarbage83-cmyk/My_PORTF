@@ -3,7 +3,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ExternalLink } from 'lucide-react'
 import type { Project } from '@/types'
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'Projects',
+  description: 'Web apps, tools, and experiments built by Ahammad Shuvo.',
+  openGraph: {
+    title: 'Projects | Ahammad Shuvo',
+    description: 'Web apps, tools, and experiments I have built.',
+  },
+}
 export default async function ProjectsPage() {
   const supabase = createClient()
   const { data: projects } = await supabase
