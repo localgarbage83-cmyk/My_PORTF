@@ -1,7 +1,18 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, FolderOpen, BookOpen, FileText, FlaskConical } from 'lucide-react'
+import type { Metadata } from 'next'
 
+export const metadata: Metadata = {
+  title: 'Home',
+  description:
+    'Ahammad Shuvo — Thinker, Builder, Writer. Portfolio, projects, books, blog & research.',
+  openGraph: {
+    title: 'Ahammad Shuvo — Thinker. Builder. Writer.',
+    description:
+      'Building things that matter, writing what I believe, and sharing the journey along the way.',
+  },
+}
 const hubs = [
   {
     title: 'প্রজেক্ট',
